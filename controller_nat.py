@@ -1,17 +1,16 @@
 #Ryu app for Network Address Translation (NAT)
-#Topology is as shown in figure below. 3 hosts h1, h2 and h3
-#are in the same network and they can ping h4 which is in
+#The network topology used for experimentation shown below. 
+#The network is divided into two subnets. Hosts h1, h2 and h3 belong to one of the subnets
+# and h4 to the other. 
 #
-# 	     sw1-------sw2	
+# 	          sw1-------sw2	
 #            / | \       |
 #           /  |  \      |
 #          /   |   \     |
-#         h1   h2...h3   h4
+#         h1   h2  h3   h4
 #
-#a different network by using NAT. sw2 behaves as a router
-#and performs NAT as directed by the controller.
-#h1, h2 and h3 can ping h4
-#h4 can't ping h1, h2 and h3. 
+# Switch sw2 behaves as a router and performs NAT as directed by the SDN controller
+# enabling hosts h1, h2 and h3 to reach h4. 
 
 
 from ryu.base import app_manager
